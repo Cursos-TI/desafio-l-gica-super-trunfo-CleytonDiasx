@@ -74,7 +74,7 @@ int main() {
     }
     if (area > area2){
         printf("Carta 1 venceu!\n");
-        carta1 = (carta1++);//incrementa 1 unidade casoa carta 1 ganhe a comparacao;
+        carta1++;//incrementa 1 unidade casoa carta 1 ganhe a comparacao;
     }else {
         printf("Carta 2 venceu!\n");
         carta2++;//incrementa 1 unidade casoa carta 2 ganhe a comparacao;
