@@ -64,50 +64,65 @@ int main() {
 
     printf("\n");//linha invisivel;
 
-    //compracao dos atributos da carta:
-    if (populacao > populacao2){
-        printf("Carta 1 venceu!\n");
-        carta1++;//incrementa 1 unidade casoa carta 1 ganhe a comparacao;
-    }else{ 
-        printf("Carta 2 venceu!\n");
-        carta2++;//incrementa 1 unidade casoa carta 2 ganhe a comparacao;
-    }
-    if (area > area2){
-        printf("Carta 1 venceu!\n");
-        carta1++;//incrementa 1 unidade casoa carta 1 ganhe a comparacao;
-    }else {
-        printf("Carta 2 venceu!\n");
-        carta2++;//incrementa 1 unidade casoa carta 2 ganhe a comparacao;
-    }
-    if (pib > pib2){
-        printf("Carta 1 venceu!\n");
-        carta1++;//incrementa 1 unidade casoa carta 1 ganhe a comparacao;
-    }else{
-        printf("Carta 2 venceu!\n");
-        carta2++;//incrementa 1 unidade casoa carta 2 ganhe a comparacao;
-    }     
-    if (densidadePopulacional < densidadePopulacional2){
-        printf("Carta 1 venceu!\n");
-        carta1++;//incrementa 1 unidade casoa carta 1 ganhe a comparacao;
-    }else{
-        printf("Carta 2 venceu!\n");
-        carta2++;//incrementa 1 unidade casoa carta 2 ganhe a comparacao;
-    }
-    if (pibPerCapito > pibPerCapito2){
-        printf("Carta 1 venceu!\n");
-        carta1++;//incrementa 1 unidade casoa carta 1 ganhe a comparacao;
-    }else {
-        printf("carta 2 venceu!\n");
-        carta2++;//incrementa 1 unidade casoa carta 2 ganhe a comparacao;
-    }
+    //escolha do cirterio de comparacao do jogador;
+    int escolha;
+    ///menu de opcao e criterios de comparacao;
+    printf("1.Populcao;\n");
+    printf("2.Area\n");
+    printf("3.PIB;\n");
+    printf("4.Densidade Populacional;\n");
+    printf("5.PIB Per Capita;\n");
+    printf("Escolha uma opcao:");//escolha da opcao;
+    scanf("%d", &escolha);//leitura da opcao;
 
-    printf("\n");//linha invisivel;
-
-    //resultado do jogo;
-    if (carta1 > carta2){
-        printf("RESULTADO: CARTA 1 VENCEU!");
-    }else{
-        printf("RESULTADO: CARTA 2 VENCEU!");
+    printf("\n");
+    //estrutura switch usada para definir o venccedor nos casos da escolha de criterios:
+    switch (escolha){
+    case 1://caso de escolha de populcao:
+        if(populacao > populacao2){
+            printf("Carta 1 VENCEU!\n");
+        }else if(populacao < populacao2){
+            printf("Carta 2 VENCEU!\n");
+        }else {
+            printf("EMPATE!\n");
+        }
+        break;
+    case 2://caso de escolha de area:
+       if(area > area2){
+        printf("Carta 1 VENCEU!\n");
+       }else if(area < area2){
+        printf("Carta 2 VENCEU!\n");
+       }else{
+        printf("EMPATE!\n");
+       }
+       break;
+    case 3://caso de escolha de PIB:
+       if(pib > pib2){
+        printf("Carta 1 VENCEU!\n");
+       }else if(pib < pib2){
+        printf("Carta 2 VENCEU!\n");
+       }else{
+        printf("EMPATE!\n");
+       }
+       break;
+     case 4://caso de escolha de densidade populacional:
+        if(densidadePopulacional < densidadePopulacional2){
+            printf("Carta 1 VENCEU!\n");
+        }else if(densidadePopulacional > densidadePopulacional2){
+            printf("Carta 2 VENCEU!\n");
+        }else {
+            printf("EMPATE!\n");
+        }
+        break;
+     case 5://caso de escolah de PIB Per Capita:
+        if(pibPerCapito > pibPerCapito2){
+            printf("Carta 1 VENCEU!\n");
+        }else if(pibPerCapito < pibPerCapito2){
+            printf("Carta 2 VENCEU!\n");
+        }else {
+            printf("EMPATE!\n");
+        }
+        break;
     }
     return 0; 
 }
